@@ -40,9 +40,9 @@ inkscape/extensions/
 
 This extension is presented in two tabs, **Xaxis** and  **Yaxis**. They are used to configure independently the axes of your Cartesian plot. Both tabs have the same control elements, with the exception of the last control in the Xaxis tab, which controls the general aspect ratio of the Cartesian axes.
 
-<img src="docs/images/XaxisSetup.png" width="400px"/>
+<img src="docs/images/Config_Xaxis.png" width="600px"/>
 
-<img src="docs/images/YaxisSetup.png" width="400px"/>
+<img src="docs/images/Config_Yaxis.png" width="600px"/>
 
 
 **X/Y axis label:** label of the axes. This string must be LaTeX compatible. Any LaTeX commands or environments are valid. If you want to write in mathematical environment, enclose your text with $...$. You don't have to escape any backslashes.
