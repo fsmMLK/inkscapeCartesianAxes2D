@@ -2,7 +2,7 @@
 
 # --------------------------------------------------------------------------------------
 #
-#    cartesialAxes2D: - Inkscape extension to assist creating 2D cartesian axes
+#    cartesianAxes2D: - Inkscape extension to assist creating 2D cartesian axes
 #
 #    Copyright (C) 2016 by Fernando Moura
 #
@@ -31,29 +31,28 @@ import math
 
 
 class AxisCartesian(inkBase.inkscapeMadeEasy):
-
     def __init__(self):
         inkex.Effect.__init__(self)
 
         self.OptionParser.add_option("--tab", action="store", type="string", dest="tab", default="object")
 
-        self.OptionParser.add_option("--xMin", action="store", type="float", dest="xMin", default='0.0')
-        self.OptionParser.add_option("--xMax", action="store", type="float", dest="xMax", default='0.0')
+        self.OptionParser.add_option("--xMin", action="store", type="float", dest="xMin", default=-2.0)
+        self.OptionParser.add_option("--xMax", action="store", type="float", dest="xMax", default=2.0)
         self.OptionParser.add_option("--xLabel", action="store", type="string", dest="xLabel", default='')
-        self.OptionParser.add_option("--xScale", action="store", type="float", dest="xScale", default='5')
+        self.OptionParser.add_option("--xScale", action="store", type="float", dest="xScale", default=5)
         self.OptionParser.add_option("--xLog10scale", action="store", type="inkbool", dest="xLog10scale", default=False)
         self.OptionParser.add_option("--xTicks", action="store", type="inkbool", dest="xTicks", default=False)
-        self.OptionParser.add_option("--xTickStep", action="store", type="float", dest="xTickStep", default='1')
+        self.OptionParser.add_option("--xTickStep", action="store", type="float", dest="xTickStep", default=1)
         self.OptionParser.add_option("--xGrid", action="store", type="inkbool", dest="xGrid", default=True)
         self.OptionParser.add_option("--xExtraText", action="store", type="string", dest="xExtraText", default='')
 
-        self.OptionParser.add_option("--yMin", action="store", type="float", dest="yMin", default='0.0')
-        self.OptionParser.add_option("--yMax", action="store", type="float", dest="yMax", default='0.0')
+        self.OptionParser.add_option("--yMin", action="store", type="float", dest="yMin", default=-2.0)
+        self.OptionParser.add_option("--yMax", action="store", type="float", dest="yMax", default=2.0)
         self.OptionParser.add_option("--yLabel", action="store", type="string", dest="yLabel", default='')
-        self.OptionParser.add_option("--yScale", action="store", type="float", dest="yScale", default='5')
+        self.OptionParser.add_option("--yScale", action="store", type="float", dest="yScale", default=5)
         self.OptionParser.add_option("--yLog10scale", action="store", type="inkbool", dest="yLog10scale", default=False)
         self.OptionParser.add_option("--yTicks", action="store", type="inkbool", dest="yTicks", default=False)
-        self.OptionParser.add_option("--yTickStep", action="store", type="float", dest="yTickStep", default='1')
+        self.OptionParser.add_option("--yTickStep", action="store", type="float", dest="yTickStep", default=1)
         self.OptionParser.add_option("--yGrid", action="store", type="inkbool", dest="yGrid", default=True)
         self.OptionParser.add_option("--yExtraText", action="store", type="string", dest="yExtraText", default='')
 
@@ -74,6 +73,7 @@ class AxisCartesian(inkBase.inkscapeMadeEasy):
         Xlimits = [so.xMin, so.xMax]
         Ylimits = [so.yMin, so.yMax]
 
+        #defines text height and line width
         textSize = so.generalAspectFactor * 0.25 * min(so.xScale, so.yScale)
         lineWidthAxis = so.generalAspectFactor * min(so.xScale, so.yScale) / 35.0
 

@@ -38,7 +38,7 @@ inkscape/extensions/
 
 # Usage
 
-This extension is presented in two tabs, **Xaxis** and  **Yaxis**. They are used to configure independently the axes of your Cartesian plot. Both tabs have the same control elements, with the exception of the last control in the Xaxis tab, which controls the general aspect ratio of the Cartesian axes.
+This extension is presented in two tabs, **X axis** and  **Y axis**. They are used to configure independently the axes  of your chart. Both tabs have the same control elements, with the exception of the last control in the Xaxis tab, which controls the general aspect ratio of the Cartesian axes.
 
 <img src="docs/images/Config_Xaxis.png" width="600px"/>
 
@@ -62,10 +62,12 @@ Ex: `Foobar $\sqrt{x^2}$ so fancy! (\si{\newton\per\squaremetre})`
 **Logarithmic scale:** Set the axis to be represented in log10 scale. In such case, the limits of the axis must be both greater than zero.
 
 **Add grid to X/Y axis:** Draw grid lines in X or Y axes.
-   - *linear scale:* The grid lines will be placed at each tick marks
-   - *logarithmic scale:* The grid lines will be placed dividing each decade in 10 parts in at each tick marks
+   - *linear scale:* The grid lines will be placed at each tick mark
+   - *logarithmic scale:* The grid lines will be placed dividing each decade in 10 parts
 
-**X/Y tick step:** Tick marks interval in plot units. This value is not referenced to  in logarithmic scale
+**Add ticks to X/Y axis:** Draw tick marks with associated values in X or Y axes.
+
+**X/Y tick step:** Tick marks interval  in units of your chart. This value is not referenced to  in logarithmic scale
 
 Ex: limits from -1 to 1, with tick step of 0.5 will produce ticks at -1, -0.5, 0, 0.5, 1
 
@@ -81,18 +83,18 @@ Ex: limits from -1 to 1, with tick step of 0.5 will produce ticks at -1, -0.5, 0
 
 <img src="docs/images/TickLength.png" width="350px"/>
 
-**X/Y tick suffix value:** Optional extra suffix to the added to the tick values. You can use any LaTeX text/commands valid in mathematical environment $...$. You don't have to enclose your text between $...$. You don't have to escape any backslashes.
+**X/Y tick suffix value:** Optional extra suffix to be added to the tick values. You can use any LaTeX text/commands valid in mathematical environment $...$. You don't have to enclose your text between $...$. You don't have to escape any backslashes.
 
 <img src="docs/images/TickSuffix.png" width="800px"/>
 
-**General aspect factor:** (present in Xaxis tab only) General aspect ratio between line width and text width. I designed this extension to have an overall
-  aspect ratio that looked nice to my eyes. It is a function of X and Y tick lengths. With this control you can scale both line widths and text height to fit your needs.
+**General aspect factor:** (present in Xaxis tab only) General aspect ratio between line width and text width. I designed this extension to have an overall aspect ratio that looked nice to my eyes. It is a function of X and Y tick lengths. With this control you can scale both line widths and text height to fit your needs.
 
 <img src="docs/images/generalAspectRatio.png" width="700px"/>
 
 # Observations
 
  - The axes will be placed crossing the origin (0,0) or crossing the coordinate (x,y) closest to the origin if the origin does not lies within the limits.
+ - The axes will be created at the center of your screen.
 
 # Examples
 

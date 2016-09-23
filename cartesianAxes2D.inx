@@ -8,29 +8,29 @@
   <dependency type="executable" location="extensions">inkscapeMadeEasy_Draw.py</dependency>
   <dependency type="executable" location="extensions">inkscapeMadeEasy_Plot.py</dependency>
     <param name="tab" type="notebook">
-        <page name="Linear cartesian axis" appearance="minimal" _gui-text="X axis">
-            <param name="xLabel"      type="string"  _gui-text="X axis label (LaTeX is supported):">n</param>
-            <param name="xMin"    type="float"   min="-100000"    max="100000" precision="3"   _gui-text="x min:">-0</param>
-            <param name="xMax"    type="float"   min="-100000"    max="100000" precision="3"    _gui-text="x max:">1</param>
-            <param name="xLog10scale" type="boolean"  _gui-text="Logarithmic scale">False</param>  
-            <param name="xGrid"       type="boolean"  _gui-text="Add grid to X axis">True</param>
-            
-            <param name="xTicks"      type="boolean" _gui-text="Add ticks to X axis">False</param>
-            <param name="xTickStep"   type="string"  _gui-text="X tick step (linear axis only):">1</param>
+        <page name="X cartesian axis" appearance="minimal" _gui-text="X axis">
+            <param name="xLabel"      type="string"  _gui-text="X axis label (LaTeX is supported):">$x$</param>
+            <param name="xMin"    type="float"   min="-100000"    max="100000" precision="3"   _gui-text="x min:">-2</param>
+            <param name="xMax"    type="float"   min="-100000"    max="100000" precision="3"    _gui-text="x max:">2</param>
+            <param name="xLog10scale" type="boolean"  _gui-text="Logarithmic scale">0</param>  
+            <param name="xGrid"       type="boolean"  _gui-text="Add grid to X axis">1</param>
+
+            <param name="xTicks"      type="boolean" _gui-text="Add ticks to X axis">1</param>
+            <param name="xTickStep"   type="float"  min="0"    max="2000" precision="3" _gui-text="X tick step (linear axis only):">1</param>
             <param name="xScale"      type="float"   min="5"    max="2000" precision="1"   _gui-text="X tick length (or the length of 1 decade if using log scale):">50</param>
             <param name="xExtraText"  type="string" _gui-text="X tick sufix value:"></param>
 
             <param name="generalAspectFactor"    type="float"  precision="2"  min="0.01"    max="100"    _gui-text="General aspect factor (default: 1.0)">1</param>
         </page>
-        <page name="Linear cartesian axis" appearance="minimal" _gui-text="Y axis">
-            <param name="yLabel"     type="string"  _gui-text="Y axis label (LaTeX is supported):">x[n]</param>
-            <param name="yMin"    type="float"   min="-100000"    max="100000" precision="3"    _gui-text="y min:">-1</param>
-            <param name="yMax"    type="float"   min="-100000"    max="100000" precision="3"    _gui-text="y max:">1</param> 
-            <param name="yLog10scale" type="boolean"  _gui-text="Logarithmic scale">False</param>  
-            <param name="yGrid"       type="boolean"  _gui-text="Add grid to Y axis">True</param>
+        <page name="Y cartesian axis" appearance="minimal" _gui-text="Y axis">
+            <param name="yLabel"     type="string"  _gui-text="Y axis label (LaTeX is supported):">$y(x)$</param>
+            <param name="yMin"    type="float"   min="-100000"    max="100000" precision="3"    _gui-text="y min:">-2</param>
+            <param name="yMax"    type="float"   min="-100000"    max="100000" precision="3"    _gui-text="y max:">2</param> 
+            <param name="yLog10scale" type="boolean"  _gui-text="Logarithmic scale">0</param>  
+            <param name="yGrid"       type="boolean"  _gui-text="Add grid to Y axis">1</param>
             
-            <param name="yTicks"      type="boolean" _gui-text="Add ticks to Y axis">False</param>
-            <param name="yTickStep"   type="string"  _gui-text="Y tick step (linear axis only):">1</param>
+            <param name="yTicks"      type="boolean" _gui-text="Add ticks to Y axis">1</param>
+            <param name="yTickStep"   type="float"  min="0"    max="2000" precision="3"  _gui-text="Y tick step (linear axis only):">1</param>
             <param name="yScale"      type="float"   min="5"    max="2000" precision="1"   _gui-text="Y tick length (or the length of 1 decade if using log scale):">50</param>
             <param name="yExtraText"  type="string" _gui-text="Y tick sufix value:"></param>
         </page>
