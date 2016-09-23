@@ -73,7 +73,8 @@ Ex: limits from -1 to 1, with tick step of 0.5 will produce ticks at -1, -0.5, 0
 
 > Note: The ticks will radiate from the origin x=0 or y=0 unless the origin does not lie within the limits. In such cases, the ticks will radiate starting from the  limit closest to the origin.
 >
-> Examples
+> Examples in x direction. The same rules apply to Y direction
+>
 > <img src="docs/images/TickStep.png" width="600px"/>
 
 
