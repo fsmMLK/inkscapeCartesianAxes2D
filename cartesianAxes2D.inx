@@ -1,56 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-  <_name>cartesian axes 2D</_name>
+  <_name>Cartesian axes</_name>
   <id>fsmMLK.cartesianAxes2D</id>
   <dependency type="executable" location="extensions">cartesianAxes2D.py</dependency>
   <dependency type="executable" location="extensions">inkex.py</dependency>
   <dependency type="executable" location="extensions">inkscapeMadeEasy_Base.py</dependency>
   <dependency type="executable" location="extensions">inkscapeMadeEasy_Draw.py</dependency>
   <dependency type="executable" location="extensions">inkscapeMadeEasy_Plot.py</dependency>
-    <param name="tab" type="notebook">
-        <page name="X cartesian axis" appearance="minimal" _gui-text="X axis">
-            <param name="xLabel"      type="string"  _gui-text="X axis label (LaTeX is supported):">$x$</param>
-            <param name="xMin"    type="float"   min="-100000"    max="100000" precision="3"   _gui-text="x min:">-2</param>
-            <param name="xMax"    type="float"   min="-100000"    max="100000" precision="3"    _gui-text="x max:">2</param>
-            <param name="xLog10scale" type="boolean"  _gui-text="Logarithmic scale">0</param>  
-            <param name="xGrid"       type="boolean"  _gui-text="Add grid to X axis">1</param>
-
-            <param name="xTicks"      type="boolean" _gui-text="Add ticks to X axis">1</param>
-            <param name="xTickStep"   type="float"  min="0"    max="2000" precision="3" _gui-text="X tick step (linear axis only):">1</param>
-            <param name="xScale"      type="float"   min="5"    max="2000" precision="1"   _gui-text="X tick length (or the length of 1 decade if using log scale):">50</param>
-            <param name="xExtraText"  type="string" _gui-text="X tick sufix value:"></param>
-
-            <param name="generalAspectFactor"    type="float"  precision="2"  min="0.01"    max="100"    _gui-text="General aspect factor (default: 1.0)">1</param>
-        </page>
-        <page name="Y cartesian axis" appearance="minimal" _gui-text="Y axis">
-            <param name="yLabel"     type="string"  _gui-text="Y axis label (LaTeX is supported):">$y(x)$</param>
-            <param name="yMin"    type="float"   min="-100000"    max="100000" precision="3"    _gui-text="y min:">-2</param>
-            <param name="yMax"    type="float"   min="-100000"    max="100000" precision="3"    _gui-text="y max:">2</param> 
-            <param name="yLog10scale" type="boolean"  _gui-text="Logarithmic scale">0</param>  
-            <param name="yGrid"       type="boolean"  _gui-text="Add grid to Y axis">1</param>
-            
-            <param name="yTicks"      type="boolean" _gui-text="Add ticks to Y axis">1</param>
-            <param name="yTickStep"   type="float"  min="0"    max="2000" precision="3"  _gui-text="Y tick step (linear axis only):">1</param>
-            <param name="yScale"      type="float"   min="5"    max="2000" precision="1"   _gui-text="Y tick length (or the length of 1 decade if using log scale):">50</param>
-            <param name="yExtraText"  type="string" _gui-text="Y tick sufix value:"></param>
-        </page>
-        <page name="Help" _gui-text="Help">
-            <_param name="instructions" type="description" xml:space="preserve">
+  <param name="tab" type="notebook">
+    <page name="X cartesian axis" appearance="minimal" _gui-text="X axis">
+      <param name="xLabel" type="string" _gui-text="X axis label (LaTeX is supported):">$x$</param>
+      <param name="xMin" type="float" min="-100000" max="100000" precision="3" _gui-text="x min:">-2</param>
+      <param name="xMax" type="float" min="-100000" max="100000" precision="3" _gui-text="x max:">2</param>
+      <param name="xLog10scale" type="boolean" _gui-text="Logarithmic scale">0</param>
+      <param name="xGrid" type="boolean" _gui-text="Add grid to X axis">1</param>
+      <param name="xTicks" type="boolean" _gui-text="Add ticks to X axis">1</param>
+      <param name="xTickStep" type="float" min="0" max="2000" precision="3" _gui-text="X tick step (linear axis only):">1</param>
+      <param name="xScale" type="float" min="5" max="2000" precision="1" _gui-text="X tick length (or the length of 1 decade if using log scale):">50</param>
+      <param name="xExtraText" type="string" _gui-text="X tick sufix value:"/>
+      <param name="generalAspectFactor" type="float" precision="2" min="0.01" max="100" _gui-text="General aspect factor (default: 1.0)">1</param>
+    </page>
+    <page name="Y cartesian axis" appearance="minimal" _gui-text="Y axis">
+      <param name="yLabel" type="string" _gui-text="Y axis label (LaTeX is supported):">$y(x)$</param>
+      <param name="yMin" type="float" min="-100000" max="100000" precision="3" _gui-text="y min:">-2</param>
+      <param name="yMax" type="float" min="-100000" max="100000" precision="3" _gui-text="y max:">2</param>
+      <param name="yLog10scale" type="boolean" _gui-text="Logarithmic scale">0</param>
+      <param name="yGrid" type="boolean" _gui-text="Add grid to Y axis">1</param>
+      <param name="yTicks" type="boolean" _gui-text="Add ticks to Y axis">1</param>
+      <param name="yTickStep" type="float" min="0" max="2000" precision="3" _gui-text="Y tick step (linear axis only):">1</param>
+      <param name="yScale" type="float" min="5" max="2000" precision="1" _gui-text="Y tick length (or the length of 1 decade if using log scale):">50</param>
+      <param name="yExtraText" type="string" _gui-text="Y tick sufix value:"/>
+    </page>
+    <page name="Help" _gui-text="Help">
+      <_param name="instructions" type="description" xml:space="preserve">
  You can add LaTeX expressions as labels. If you need to use mathematical environment, encloses the text with $...$.
  
  The argument 'X or Y tick sufix value' must be compatible with mathematical environemnts. You don't need to use $...$
 </_param>
-        </page>
-    </param>
-    <effect>
-        <object-type>all</object-type>
-        <effects-menu>
-            <submenu _name="fsmMLK">
-                <submenu name="Plot 2D"/>
-            </submenu>
-        </effects-menu>
-    </effect>
-    <script>
-      <command reldir="extensions" interpreter="python">cartesianAxes2D.py</command>
-    </script>
+    </page>
+  </param>
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+      <submenu _name="fsmMLK">
+        <submenu name="Plot 2D">
+          <submenu name="Cartesian"/>
+        </submenu>
+      </submenu>
+    </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">cartesianAxes2D.py</command>
+  </script>
 </inkscape-extension>
