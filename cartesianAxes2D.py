@@ -32,7 +32,7 @@ import math
 
 class AxisCartesian(inkBase.inkscapeMadeEasy):
     def __init__(self):
-        inkex.Effect.__init__(self)
+        inkBase.inkscapeMadeEasy.__init__(self)
 
         self.OptionParser.add_option("--tab", action="store", type="string", dest="tab", default="object")
 
@@ -69,6 +69,7 @@ class AxisCartesian(inkBase.inkscapeMadeEasy):
 
         #root_layer = self.current_layer
         root_layer = self.document.getroot()
+        #root_layer = self.getcurrentLayer()
 
         Xlimits = [so.xMin, so.xMax]
         Ylimits = [so.yMin, so.yMax]

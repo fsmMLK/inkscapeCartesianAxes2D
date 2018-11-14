@@ -50,6 +50,8 @@ Please refer to <https://fsmmlk.github.io/inkscapeMadeEasy/#installation-and-req
 
 # Usage
 
+The extension can be found under `extensions > fsmMLK > Plot 2D > Cartesian` menu.
+
 This extension is presented in two tabs, **X axis** and  **Y axis**. They are used to configure independently the axes  of your chart. Both tabs have the same control elements, with the exception of the last control in the Xaxis tab, which controls the general aspect ratio of the Cartesian axes.
 
 <img src="docs/images/Config_Xaxis.png" width="600px"/>
