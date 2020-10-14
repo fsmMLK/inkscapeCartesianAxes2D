@@ -10,7 +10,7 @@
         <page name="Axes configuration" appearance="minimal" gui-text="Specification">
             <hbox>
                 <vbox>
-                    
+
                     <param name="generalAspectFactor" type="float" precision="2" min="0.01" max="100" gui-text="General aspect factor (default: 1.0):">1</param>
                     <label appearance="header">X axis</label>
                     <hbox>
@@ -62,7 +62,7 @@
         </page>
         <page name="Help" gui-text="Help">
             <label>For details please refer to</label>
-            <label appearance="url">https://github.com/fsmMLK/inkscapeCartesianPlotFunction2D</label>
+            <label appearance="url">https://github.com/fsmMLK/inkscapeCartesianAxes2D</label>
         </page>
     </param>
     <effect>
