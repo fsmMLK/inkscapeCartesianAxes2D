@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>Cartesian axes</name>
+    <id>fsmMLK.cartesianAxes2D</id>
+    <dependency type="executable" location="inx">cartesianAxes2D.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy/inkscapeMadeEasy_Base.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy/inkscapeMadeEasy_Draw.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy/inkscapeMadeEasy_Plot.py</dependency>
+    <param name="tab" type="notebook">
+        <page name="Axes configuration" appearance="minimal" gui-text="Specification">
+            <hbox>
+                <vbox>
+                    
+                    <param name="generalAspectFactor" type="float" precision="2" min="0.01" max="100" gui-text="General aspect factor (default: 1.0):">1</param>
+                    <label appearance="header">X axis</label>
+                    <hbox>
+                        <param name="xMin" type="float" min="-100000" max="100000" precision="3" gui-text="Limits:">0</param>
+                        <param name="xMax" type="float" min="-100000" max="100000" precision="3" gui-text="">6</param>
+                    </hbox>
+                    <param name="xLabel" type="string" gui-text="Label:">$x$</param>
+                    <hbox>
+                        <vbox>
+                            <param name="xLog10scale" type="bool" gui-text="Log scale">false</param>
+                            <param name="xGrid" type="bool" gui-text="Add grid">true</param>
+                            <param name="xTicks" type="bool" gui-text="Add ticks">true</param>
+                        </vbox>
+                        <spacer/>
+                        <separator/>
+                        <spacer/>
+                        <vbox>
+                            <param name="xTickStep" type="float" min="0" max="2000" precision="3" gui-text="Tick step²:">1</param>
+                            <param name="xScale" type="float" min="5" max="2000" precision="1" gui-text="Tick length³:">50</param>
+                            <param name="xExtraText" type="string" gui-text="Tick sufix¹:"></param>
+                        </vbox>
+                    </hbox>
+                    <label appearance="header">Y axis</label>
+                    <hbox>
+                        <param name="yMin" type="float" min="-100000" precision="3" max="100000" gui-text="Limits:">-1</param>
+                        <param name="yMax" type="float" min="-100000" precision="3" max="100000" gui-text="">1</param>
+                    </hbox>
+                    <param name="yLabel" type="string" gui-text="Label:">$y(x)$</param>
+                    <hbox>
+                        <vbox>
+                            <param name="yLog10scale" type="bool" gui-text="Log scale">false</param>
+                            <param name="yGrid" type="bool" gui-text="Add grid">true</param>
+                            <param name="yTicks" type="bool" gui-text="Add ticks">true</param>
+                        </vbox>
+                        <spacer/>
+                        <separator/>
+                        <spacer/>
+                        <vbox>
+                            <param name="yTickStep" type="float" min="0" max="2000" precision="3" gui-text="Tick step²:">1</param>
+                            <param name="yScale" type="float" min="5" max="2000" precision="1" gui-text="Tick length³:">50</param>
+                            <param name="yExtraText" type="string" gui-text="Tick sufix¹:"></param>
+                        </vbox>
+                    </hbox>
+                </vbox>
+            </hbox>
+            <label>¹ LaTeX: text will be in inline math mode $...$.</label>
+            <label>² linear axis only</label>
+            <label>³ or the length of 1 decade in log scale</label>
+        </page>
+        <page name="Help" gui-text="Help">
+            <label>For details please refer to</label>
+            <label appearance="url">https://github.com/fsmMLK/inkscapeCartesianPlotFunction2D</label>
+        </page>
+    </param>
+    <effect>
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu name="fsmMLK">
+                <submenu name="Plot 2D">
+                    <submenu name="Cartesian"/>
+                </submenu>
+            </submenu>
+        </effects-menu>
+    </effect>
+    <script>
+        <command location="inx" interpreter="python">cartesianAxes2D.py</command>
+    </script>
+</inkscape-extension>

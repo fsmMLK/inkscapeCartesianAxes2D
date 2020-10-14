@@ -1,5 +1,5 @@
 # cartesianAxes2D
-Inkscape extension to assist creating 2D Cartesian axes
+This extension will assist you creating 2D Cartesian axes in [Inkscape](https://inkscape.org/).
 
 
 <img src="docs/images/Examples.png" width="900px"/>
@@ -8,110 +8,174 @@ Inkscape extension to assist creating 2D Cartesian axes
 
 The main features are
 
- - linear and log10 scales
- - optional grid lines in X and Y directions
- - adjustable tick mark intervals and sizes
- - LaTeX support
+ - Linear and log10 scales
+ - Optional grid lines in X and Y directions
+ - Adjustable tick mark intervals and sizes
+ - Optional LaTeX support
+
+## Current and older versions
+
+Compatibility table
+
+|  Inkscape        |  cartesianAxes2D | inkscapeMadeEasy | Receive updates?|
+|------------------|-----------------|------------------|-----------------|
+|       1.0        | 1.0 (latest)    |   1.0 (latest)   | YES             |
+| 0.48, 0.91, 0.92 | 0.9x (obsolete) |  0.9x (obsolete) | NO              |
+
+
+**Latest version:** The latest version of **cartesianAxes2D** is **1.0**. This version is compatible with Inkscape 1.0 and up only. It is **incompatible** with older Inkscape versions!
+
+**Older versions:** If you have an older version of Inkscape, please use the files under the folder **0.9x** on Github.
+
+**Important: Only the latest version will receive updates, new features, and bug fixes! The usage section in this documentation describes the latest version. In older versions, the disposition of the elements in the plugin's screen might be different. Some features might not be present or have different behavior.**
 
 # Installation and requirements
 
-This extension was partially developed in Inkscape 0.48 and partially in 0.91 in Linux (Kubuntu 12.04 and 14.04). It should work on both versions of Inkscape. Also, they should work in different OSs too as long as all requirements are installed.
+Installation procedures for latest and older versions are described below.
 
-This extension requires another extension to run, inkscapeMadeEasy <https://github.com/fsmMLK/inkscapeMadeEasy>, which contains several backstage methods and classes.
+## Requirements (all versions)
 
-In order to use cartesianAxes2D extension, you must also download inkscapeMadeEasy files and put them inside Inkscape's extension directory. Please refer to inkscapeMadeEasy installation instructions. In the end you must have the following files and directories in your Inkscape extension directory.
+- You will need [inkscapeMadeEasy](https://github.com/fsmMLK/inkscapeMadeEasy) plugin installed. Check the compatibility table above to know the version you need.
 
-```
-inkscape/extensions/
-            |-- inkscapeMadeEasy_Base.py
-            |-- inkscapeMadeEasy_Draw.py
-            |-- inkscapeMadeEasy_Plot.py
-            |-- textextLib
-            |   |-- __init__.py
-            |   |-- basicLatexPackages.tex
-            |   |-- textext.inx
-            |   |-- textext.py
-            |
-            |-- cartesianAxes2D.py
-            `-- cartesianAxes2D.inx
-```
+## Installation procedure (v1.0 only)
 
-**Disabling LaTeX support of inkscapeMadeEasy**
+**cartesianAxes2D** was developed using Inkscape 1.0 in Linux (Kubuntu 18.04). It should work in different OSs too as long as all requirements are met.
 
-Many of the methods implemented in inkscapeMadeEasy project use LaTeX to generate text. To this end I decided to employ the excellent extension **textext** from Pauli Virtanen  <https://pav.iki.fi/software/textext/>. 
+1. Install [inkscapeMadeEasy](https://github.com/fsmMLK/inkscapeMadeEasy), **version 1.0** (latest). Follow the instructions in the manual page. **Note:** LaTeX text is used in **cartesianAxes2D** if the support is activated (nicer results), otherwise regular text elements will be used.
 
-LaTeX support via textext extension requires LaTeX typesetting system in your computer (it's free and awesome! =] ).
+2. **cartesianAxes2D** installation
 
-Since many people don't use LaTeX and/or don't have it installed, inkscapeMadeEasy's LaTeX support is now optional. **By default, LaTeX support is ENABLED.**
+    1. Go to Inkscape's extension directory with a file browser. Your inkscape extension directory can be accessed by opening Inkscape and selecting ``Edit > Preferences > System``. Look for the item **User Extensions**  field. There is a button on the right of the field  that will open a file explorer window in that specific folder.
 
-Please refer to <https://fsmmlk.github.io/inkscapeMadeEasy/#installation-and-requirements> on how to easily disable LaTeX support.
+    2. Create a subfolder in the extension directory with the name ``cartesianAxes2D``. **Important:**  Be careful with upper and lower case letters. You must write as presented above.
+
+    3. Download **cartesianAxes2D** files and place them inside the directory you just created.
+
+       You don't have to copy all files from Github. The files you will need are inside the ``latest`` folder. In the end you must have the following files and directories in your Inkscape extension directory.
+
+       **LaTeX users:** You can add macros to ``inkscapeMadeEasy/basicLatexPackages.tex``. In this case the same macros will be accessible by all plugins that employ inkscapeMadeEasy.
+
+        ```
+        inkscape
+         ┣━━extensions
+         ┋   ┣━━ inkscapeMadeEasy      <-- inkscapeMadeEasy folder
+             ┃    ┣━━ inkscapeMadeEasy_Base.py
+             ┃    ┣━━ inkscapeMadeEasy_Draw.py
+             ┃    ┣━━ inkscapeMadeEasy_Plot.py
+             ┃    ┗━━ basicLatexPackages.tex
+             ┃
+             ┣━━ textext               <-- texText folder (if you installed textText)
+             ┃    ┋
+             ┃
+             ┣━━ cartesianAxes2D        <-- cartesianAxes2D folder
+             ┋    ┣━━ cartesianAxes2D.inx
+                  ┗━━ cartesianAxes2D.py
+        
+        NOTE: You might have other sub folders inside the extensions directory. They don't interfere with the plugin.
+        ```
+
+## Installation procedure (v0.9x only)
+
+**cartesianAxes2D** was developed using Inkscape 0.48 and 0.91 in Linux (Kubuntu 18.04). It should work in different OSs too as long as all requirements are met.
+
+1. Install [inkscapeMadeEasy](https://github.com/fsmMLK/inkscapeMadeEasy), **version 1.0** (latest). Follow the instructions in the manual page. **Note:** LaTeX text is used in **cartesianAxes2D** if the support is activated (nicer results), otherwise regular text elements will be used.
+
+2. **cartesianAxes2D** installation
+
+    1. Go to Inkscape's extension directory with a file browser.
+
+    2. Download **cartesianAxes2D** files and place them inside the directory you just created.
+
+       You don't have to copy all files from Github. The files you will need are inside the ``0.9x`` folder. In the end you must have the following files and directories in your Inkscape extension directory.
+
+        ```
+        inkscape
+         ┣━━ extensions
+         ┋    ┣━━ inkscapeMadeEasy_Base.py
+              ┣━━ inkscapeMadeEasy_Draw.py
+              ┣━━ inkscapeMadeEasy_Plot.py
+              ┃
+              ┣━━ textextLib
+              ┃    ┣━━ __init__.py
+              ┃    ┣━━ basicLatexPackages.tex
+              ┃    ┣━━ textext.inx
+              ┃    ┗━━ textext.py
+              ┃
+              ┣━━ cartesianAxes2D.inx        <--   from repository folder 0.9x!
+              ┗━━ cartesianAxes2D.py         <--
+        ```
 
 # Usage
 
 The extension can be found under `extensions > fsmMLK > Plot 2D > Cartesian` menu.
 
-This extension is presented in two tabs, **X axis** and  **Y axis**. They are used to configure independently the axes  of your chart. Both tabs have the same control elements, with the exception of the last control in the Xaxis tab, which controls the general aspect ratio of the Cartesian axes.
+This extension is presented in one tab, **Specification**.
 
-<img src="docs/images/Config_Xaxis.png" width="600px"/>
+<img src="docs/images/specification_Tab.png" width="450px"/>
 
-<img src="docs/images/Config_Yaxis.png" width="600px"/>
+## Specification tab
+
+**General aspect factor:** General aspect ratio between line widths and text height. I designed this extension to have an overall aspect ratio that "looks nice". It is a function of X and Y tick lengths. With this control you can scale both line width and text height. The defauls value is 1.0.
+
+<img src="docs/images/generalAspectRatio.png" width="600px"/>
 
 
-**X/Y axis label:** label of the axes. This string must be LaTeX compatible. Any LaTeX commands or environments are valid. If you want to write in mathematical environment, enclose your text with $...$. You don't have to escape any backslashes.
+### X and Y axes tab
 
-> Tip: Since `siunitx` package is included in basicLatexPackages.tex file by default in inkscapeMadeEasy, you can use any unit command available there 
+This tab has two sections, one for each axis. They affect the axes the same way.
 
-Ex: `Foobar $\sqrt{x^2}$ so fancy! (\si{\newton\per\squaremetre})`
+**Limits:** Set the range of values. On the side there are two fields for the lower and upper limits.
 
-<img src="docs/images/Legend_01.png" width="400px"/>
-
-**X/Y min and max:** Set the limits of the axes. The extension will inform if these limits are invalid.
+The extension will inform if these limits are invalid.
   
   - The upper limit must be greater than the lower limit
   - If logarithmic scale is checked, then the limits must be positive
   - If logarithmic scale is checked, then the lower limit will be rounded down to the nearest power of 10 and the upper rounded up to the nearest power of 10 in order to complete the decades. Ex: 0.2 to 12, then the limits will be rounded to 0.1 to 100
 
-**Logarithmic scale:** Set the axis to be represented in log10 scale. In such case, the limits of the axis must be both greater than zero.
+**Label:** label of the axes. If LaTeX support is activated and you want to write in mathematical environment, enclose your text with $...$.
 
-**Add grid to X/Y axis:** Draw grid lines in X or Y axes.
-   - *linear scale:* The grid lines will be placed at each tick mark
-   - *logarithmic scale:* The grid lines will be placed dividing each decade in 10 parts
+> Tip: Since `siunitx` package is included in inkscapeMadeEasy's basicLatexPackages.tex, you can use any unit command available there too!
 
-**Add ticks to X/Y axis:** Draw tick marks with associated values in X or Y axes.
+> Ex: `Foobar $\sqrt{x^2}$ so fancy! (\si{\newton\per\squaremetre})`
 
-**X/Y tick step:** Tick marks interval  in units of your chart. This value is not referenced to  in logarithmic scale
+<img src="docs/images/Legend_01.png" width="400px"/>
+
+**Log scale:** Set the axis to be represented in log10 scale. In such case, the limits of the axis must be both greater than zero.
+
+
+**Add grid:** Draw grid lines.
+
+   - *linear scale:* The grid lines will be placed at the tick marks.
+   - *log scale:* The grid lines will be placed dividing each decade in 10 parts
+
+**Add ticks:** Draw tick marks with associated values. 
+
+**Tick step:** Tick mark interval, in units of your chart. This option does not affect log scale.
 
 Ex: limits from -1 to 1, with tick step of 0.5 will produce ticks at -1, -0.5, 0, 0.5, 1
 
-> Note: The ticks will radiate from the origin x=0 or y=0 unless the origin does not lie within the limits. In such cases, the ticks will radiate starting from the  limit closest to the origin.
+> Note: The ticks will radiate from the origin (x=0 or y=0) unless the origin does not lie within the limits. In such cases, the ticks will radiate starting from the limit closest to the origin. See image below.
 >
-> Examples in x direction. The same rules apply to Y direction
+> Examples in x direction: (The same rules apply to Y direction)
 >
-> <img src="docs/images/TickStep.png" width="600px"/>
+> <img src="docs/images/TickStep.png" width="500px"/>
 
+**Tick length** The distance between tick marks, in units of your canvas. See image below.
 
-**X/Y tick length** The distance between the tick marks, in px.
-   - *linear scale:* The distance between ticks in px.
-   - *logarithmic scale:* The size of each decade in px.
+   - *linear scale:* The distance between consecutive ticks, in units of your canvas.
+   - *logarithmic scale:* The size of each decade, in units of your canvas.
 
 <img src="docs/images/TickLength.png" width="350px"/>
 
-**X/Y tick suffix value:** Optional extra suffix to be added to the tick values. You can use any LaTeX text/commands valid in mathematical environment $...$. You don't have to enclose your text between $...$. You don't have to escape any backslashes.
+**Tick suffix:** Optional extra suffix to be added to tick text. **LaTeX support enabled**: You can use any LaTeX text/commands valid in mathematical environment. You don't have to enclose your text between $...$.
 
-<img src="docs/images/TickSuffix.png" width="800px"/>
+**Atention**: the values appended to tick mark text will NOT affect input/output limits!
 
-**General aspect factor:** (present in Xaxis tab only) General aspect ratio between line width and text width. I designed this extension to have an overall aspect ratio that looked nice to my eyes. It is a function of X and Y tick lengths. With this control you can scale both line widths and text height to fit your needs.
+<img src="docs/images/TickSuffix.png" width="700px"/> 
 
-<img src="docs/images/generalAspectRatio.png" width="700px"/>
 
 # Observations
 
  - The axes will be placed crossing the origin (0,0) or crossing the coordinate (x,y) closest to the origin if the origin does not lies within the limits.
- - The axes will be created at the center of your screen.
-
-# Examples
-
-<img src="docs/images/Examples.png" width="900px"/>
-
-
+ - The axes will be created in the center of your screen.
 
