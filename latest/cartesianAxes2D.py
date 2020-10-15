@@ -21,13 +21,13 @@
 #
 # --------------------------------------------------------------------------------------
 
-import inkex
-import inkscapeMadeEasy.inkscapeMadeEasy_Base as inkBase
-import inkscapeMadeEasy.inkscapeMadeEasy_Draw as inkDraw
-import inkscapeMadeEasy.inkscapeMadeEasy_Plot as inkPlot
 import math
 
-#---------------------------------------------
+import inkscapeMadeEasy.inkscapeMadeEasy_Base as inkBase
+import inkscapeMadeEasy.inkscapeMadeEasy_Plot as inkPlot
+
+
+# ---------------------------------------------
 
 
 class AxisCartesian(inkBase.inkscapeMadeEasy):
@@ -59,7 +59,6 @@ class AxisCartesian(inkBase.inkscapeMadeEasy):
         self.arg_parser.add_argument("--generalAspectFactor", type=float, dest="generalAspectFactor", default=1.0)
 
     def effect(self):
-
         so = self.options
 
         # sets the position to the viewport center, round to next 10.
@@ -67,22 +66,21 @@ class AxisCartesian(inkBase.inkscapeMadeEasy):
         position[0] = int(math.ceil(position[0] / 10.0)) * 10
         position[1] = int(math.ceil(position[1] / 10.0)) * 10
 
-        #root_layer = self.current_layer
+        # root_layer = self.current_layer
         root_layer = self.document.getroot()
-        #root_layer = self.getcurrentLayer()
+        # root_layer = self.getcurrentLayer()
 
         Xlimits = [so.xMin, so.xMax]
         Ylimits = [so.yMin, so.yMax]
 
-        #defines text height and line width
+        # defines text height and line width
         textSize = so.generalAspectFactor * 0.25 * min(so.xScale, so.yScale)
         lineWidthAxis = so.generalAspectFactor * min(so.xScale, so.yScale) / 35.0
 
-        inkPlot.axis.cartesian(self, root_layer, Xlimits, Ylimits, position, xLabel=so.xLabel, yLabel=so.yLabel,
-                               xlog10scale=so.xLog10scale, ylog10scale=so.yLog10scale,
-                               xTicks=so.xTicks, yTicks=so.yTicks, xTickStep=so.xTickStep, yTickStep=so.yTickStep,
-                               xScale=so.xScale, yScale=so.yScale, xAxisUnitFactor=so.xExtraText, yAxisUnitFactor=so.yExtraText,
-                               xGrid=so.xGrid, yGrid=so.yGrid, forceTextSize=textSize, forceLineWidth=lineWidthAxis)
+        inkPlot.axis.cartesian(self, root_layer, Xlimits, Ylimits, position, xLabel=so.xLabel, yLabel=so.yLabel, xlog10scale=so.xLog10scale,
+                               ylog10scale=so.yLog10scale, xTicks=so.xTicks, yTicks=so.yTicks, xTickStep=so.xTickStep, yTickStep=so.yTickStep,
+                               xScale=so.xScale, yScale=so.yScale, xAxisUnitFactor=so.xExtraText, yAxisUnitFactor=so.yExtraText, xGrid=so.xGrid,
+                               yGrid=so.yGrid, forceTextSize=textSize, forceLineWidth=lineWidthAxis)
 
 
 if __name__ == '__main__':
