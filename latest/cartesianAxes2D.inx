@@ -10,50 +10,54 @@
         <page name="Axes configuration" appearance="minimal" gui-text="Specification">
             <hbox>
                 <vbox>
-
                     <param name="generalAspectFactor" type="float" precision="2" min="0.01" max="100" gui-text="General aspect factor (default: 1.0):">1</param>
-                    <label appearance="header">X axis</label>
-                    <hbox>
-                        <param name="xMin" type="float" min="-100000" max="100000" precision="3" gui-text="Limits:">0</param>
-                        <param name="xMax" type="float" min="-100000" max="100000" precision="3" gui-text="">6</param>
-                    </hbox>
-                    <param name="xLabel" type="string" gui-text="Label:">$x$</param>
-                    <hbox>
-                        <vbox>
-                            <param name="xLog10scale" type="bool" gui-text="Log scale">false</param>
-                            <param name="xGrid" type="bool" gui-text="Add grid">true</param>
-                            <param name="xTicks" type="bool" gui-text="Add ticks">true</param>
-                        </vbox>
-                        <spacer/>
-                        <separator/>
-                        <spacer/>
-                        <vbox>
-                            <param name="xTickStep" type="float" min="0" max="2000" precision="3" gui-text="Tick step²:">1</param>
-                            <param name="xScale" type="float" min="5" max="2000" precision="1" gui-text="Tick length³:">50</param>
-                            <param name="xExtraText" type="string" gui-text="Tick sufix¹:"></param>
-                        </vbox>
-                    </hbox>
-                    <label appearance="header">Y axis</label>
-                    <hbox>
-                        <param name="yMin" type="float" min="-100000" precision="3" max="100000" gui-text="Limits:">-1</param>
-                        <param name="yMax" type="float" min="-100000" precision="3" max="100000" gui-text="">1</param>
-                    </hbox>
-                    <param name="yLabel" type="string" gui-text="Label:">$y(x)$</param>
-                    <hbox>
-                        <vbox>
-                            <param name="yLog10scale" type="bool" gui-text="Log scale">false</param>
-                            <param name="yGrid" type="bool" gui-text="Add grid">true</param>
-                            <param name="yTicks" type="bool" gui-text="Add ticks">true</param>
-                        </vbox>
-                        <spacer/>
-                        <separator/>
-                        <spacer/>
-                        <vbox>
-                            <param name="yTickStep" type="float" min="0" max="2000" precision="3" gui-text="Tick step²:">1</param>
-                            <param name="yScale" type="float" min="5" max="2000" precision="1" gui-text="Tick length³:">50</param>
-                            <param name="yExtraText" type="string" gui-text="Tick sufix¹:"></param>
-                        </vbox>
-                    </hbox>
+                    <param name="subtab_axis" type="notebook">
+                        <page name="Xaxis" appearance="minimal" gui-text="X axis">
+                            <hbox>
+                                <param name="xMin" type="float" min="-100000" max="100000" precision="3" gui-text="Limits:">0</param>
+                                <param name="xMax" type="float" min="-100000" max="100000" precision="3" gui-text="">6</param>
+                            </hbox>
+                            <param name="xLabel" type="string" gui-text="Label:">$x$</param>
+                            <hbox>
+                                <vbox>
+                                    <param name="xLog10scale" type="bool" gui-text="Log scale">false</param>
+                                    <param name="xGrid" type="bool" gui-text="Add grid">true</param>
+                                    <param name="xTicks" type="bool" gui-text="Add ticks">true</param>
+                                </vbox>
+                                <spacer/>
+                                <separator/>
+                                <spacer/>
+                                <vbox>
+                                    <param name="xTickStep" type="float" min="0" max="2000" precision="3" gui-text="Tick step²:">1</param>
+                                    <param name="xScale" type="float" min="5" max="2000" precision="1" gui-text="Tick length³:">50</param>
+                                    <param name="xExtraText" type="string" gui-text="Tick sufix¹:"></param>
+                                </vbox>
+                            </hbox>
+                        </page>
+                        <page name="Yaxis" appearance="minimal" gui-text="Y axis">
+                            <hbox>
+                                <param name="yMin" type="float" min="-100000" precision="3" max="100000" gui-text="Limits:">-1</param>
+                                <param name="yMax" type="float" min="-100000" precision="3" max="100000" gui-text="">1</param>
+                            </hbox>
+                            <param name="yLabel" type="string" gui-text="Label:">$y(x)$</param>
+                            <hbox>
+                                <vbox>
+                                    <param name="yLog10scale" type="bool" gui-text="Log scale">false</param>
+                                    <param name="yGrid" type="bool" gui-text="Add grid">true</param>
+                                    <param name="yTicks" type="bool" gui-text="Add ticks">true</param>
+                                </vbox>
+                                <spacer/>
+                                <separator/>
+                                <spacer/>
+                                <vbox>
+                                    <param name="yTickStep" type="float" min="0" max="2000" precision="3" gui-text="Tick step²:">1</param>
+                                    <param name="yScale" type="float" min="5" max="2000" precision="1" gui-text="Tick length³:">50</param>
+                                    <param name="yExtraText" type="string" gui-text="Tick sufix¹:"></param>
+
+                                </vbox>
+                            </hbox>
+                        </page>
+                    </param>
                 </vbox>
             </hbox>
             <label>¹ LaTeX: text will be in inline math mode $...$.</label>

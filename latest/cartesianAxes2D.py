@@ -35,6 +35,7 @@ class AxisCartesian(inkBase.inkscapeMadeEasy):
         inkBase.inkscapeMadeEasy.__init__(self)
 
         self.arg_parser.add_argument("--tab", type=str, dest="tab", default="object")
+        self.arg_parser.add_argument("--subtab_axis", type=str, dest="subtab_axis", default="object")
 
         self.arg_parser.add_argument("--xMin", type=float, dest="xMin", default=-2.0)
         self.arg_parser.add_argument("--xMax", type=float, dest="xMax", default=2.0)

@@ -120,9 +120,9 @@ This extension is presented in one tab, **Specification**.
 <img src="docs/images/generalAspectRatio.png" width="600px"/>
 
 
-### X and Y axes tab
+### X and Y axes subtab
 
-This tab has two sections, one for each axis. They affect the axes the same way.
+This tab has two pages, one for each axis. They affect the axes the same way.
 
 **Limits:** Set the range of values. On the side there are two fields for the lower and upper limits.
 
