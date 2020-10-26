@@ -15,7 +15,7 @@
                         <page name="Xaxis" appearance="minimal" gui-text="X axis">
                             <hbox>
                                 <param name="xMin" type="float" min="-100000" max="100000" precision="3" gui-text="Limits:">0</param>
-                                <param name="xMax" type="float" min="-100000" max="100000" precision="3" gui-text="">6</param>
+                                <param name="xMax" type="float" min="-100000" max="100000" precision="3" gui-text=" ">6</param>
                             </hbox>
                             <param name="xLabel" type="string" gui-text="Label:">$x$</param>
                             <hbox>
@@ -37,7 +37,7 @@
                         <page name="Yaxis" appearance="minimal" gui-text="Y axis">
                             <hbox>
                                 <param name="yMin" type="float" min="-100000" precision="3" max="100000" gui-text="Limits:">-1</param>
-                                <param name="yMax" type="float" min="-100000" precision="3" max="100000" gui-text="">1</param>
+                                <param name="yMax" type="float" min="-100000" precision="3" max="100000" gui-text=" ">1</param>
                             </hbox>
                             <param name="yLabel" type="string" gui-text="Label:">$y(x)$</param>
                             <hbox>

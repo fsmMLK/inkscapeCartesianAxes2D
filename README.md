@@ -115,8 +115,6 @@ This extension is presented in one tab, **Specification**.
 
 ## Specification tab
 
-**General aspect factor:** General aspect ratio between line widths and text height. I designed this extension to have an overall aspect ratio that "looks nice". It is a function of X and Y tick lengths. With this control you can scale both line width and text height. The defauls value is 1.0.
-
 <img src="docs/images/generalAspectRatio.png" width="600px"/>
 
 
